@@ -26,7 +26,7 @@ const TAG_STYLE: Record<Row["tone"], string> = {
 
 export function Status() {
   return (
-    <section className="border-t border-border py-16">
+    <section id="status" className="scroll-mt-8 border-t border-border py-16">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <h2 className="text-2xl font-semibold tracking-tight">Honest status</h2>
         <div className="mt-8 flex flex-col gap-4">

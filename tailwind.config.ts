@@ -8,14 +8,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#fafafa",       // page background (near-white)
-        surface: "#ffffff",  // cards / code blocks
-        border: "#e6e8e6",   // hairline borders
-        accent: "#1c6b50",   // ledger green
-        muted: "#6b6a70",    // secondary text
-        hero: "#eeecec",     // fallback ground behind the hero video
+        bg: "#fafafa",        // page background below the hero
+        surface: "#ffffff",   // cards / code blocks
+        border: "#e6e8e6",    // hairline borders
+        accent: "#1c6b50",    // ledger green (links, control emphasis)
+        muted: "#6b6a70",     // secondary text
+        hero: "#000000",      // hero ground behind the video
+        shine: "#64cefb",     // ShinyText base color
       },
       fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
     },
