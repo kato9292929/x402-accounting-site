@@ -2,7 +2,7 @@
   "name": "x402-accounting-site",
   "version": "0.1.0",
   "private": true,
-  "description": "Landing page for x402 Accounting Bridge — an open-source proof of concept.",
+  "description": "Landing page for x402 Accounting Bridge \u2014 an open-source proof of concept.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,6 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.462.0",
     "next": "^15.5.18",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

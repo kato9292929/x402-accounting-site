@@ -15,7 +15,7 @@ const POINTS = [
 
 export function Why() {
   return (
-    <section className="border-t border-border py-16">
+    <section id="why" className="scroll-mt-8 border-t border-border py-16">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <h2 className="text-2xl font-semibold tracking-tight">Why</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3">

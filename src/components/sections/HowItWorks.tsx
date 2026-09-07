@@ -30,7 +30,7 @@ const STEPS: Step[] = [
 
 export function HowItWorks() {
   return (
-    <section className="border-t border-border py-16">
+    <section id="how-it-works" className="scroll-mt-8 border-t border-border py-16">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <h2 className="text-2xl font-semibold tracking-tight">How it works</h2>
 
