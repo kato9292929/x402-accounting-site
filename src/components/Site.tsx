@@ -19,7 +19,7 @@ export function Site({ copy }: { copy: SiteCopy }) {
     <div lang={copy.lang}>
       <Hero copy={copy} videoSrc={HERO_VIDEO} />
 
-      <div className="bg-bg">
+      <div className="bg-ink">
         <WhatThisIs copy={copy} />
         <HowItWorks copy={copy} />
         <Why copy={copy} />

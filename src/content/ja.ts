@@ -23,8 +23,8 @@ export const ja: SiteCopy = {
     eyebrow: "サンプル台帳で動作 · 実サービスとは未接続",
     headingLine1: "エージェントの都度払いを、",
     headingShine: "会計に載せる。",
-    // 日本語は1文字あたりの幅が広いので、英語版より1〜2段小さいスケールに寄せる。
-    headingClass: "text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl",
+    // 日本語は字幅が広く行間も詰めすぎると潰れるので、専用のスケールを使う。
+    headingClass: "h1-ja",
     sub: "AIエージェントの支払いのための、会計＋支出統制のレイヤー。エージェントがAPI利用ごとにUSDCで払うたびに、支払い前に上限で止め、各支払いを複式簿記の仕訳に起こし、会計ソフト用に書き出し、月次で突合します。",
     cta: "GitHub を見る",
   },

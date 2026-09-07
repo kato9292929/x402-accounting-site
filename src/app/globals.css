@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   --font-hero: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
 html,
 body {
-  background: #fafafa;
-  color: #111111;
+  background: #05070a;
+  color: #e8ecf1;
 }
 
 body {
@@ -20,4 +20,38 @@ body {
 
 a {
   color: inherit;
+}
+
+::selection {
+  background: rgba(100, 206, 251, 0.28);
+}
+
+@layer components {
+  /* Hero headline. Latin can go huge; Japanese glyphs are wider and need a
+     lower ceiling and looser leading, so each locale gets its own ramp instead
+     of one scale that overflows in one language or shrinks in the other. */
+  .h1-en {
+    font-size: clamp(2.75rem, 8.5vw, 8rem);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+  }
+
+  .h1-ja {
+    font-size: clamp(2.25rem, 5.6vw, 5.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+
+  .h2-section {
+    font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  .eyebrow {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
 }

@@ -1,24 +1,30 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/app/**/*.{ts,tsx}",
-    "./src/components/**/*.{ts,tsx}",
-  ],
+  content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        bg: "#fafafa",        // page background below the hero
-        surface: "#ffffff",   // cards / code blocks
-        border: "#e6e8e6",    // hairline borders
-        accent: "#1c6b50",    // ledger green (links, control emphasis)
-        muted: "#6b6a70",     // secondary text
-        hero: "#000000",      // hero ground behind the video
-        shine: "#64cefb",     // ShinyText base color
+        // One dark world, carried from the hero video through the whole page.
+        ink: "#05070A",        // page ground
+        surface: "#0D1117",    // cards, code
+        line: "#1E2732",       // hairlines
+        "line-soft": "#161D26",
+        fg: "#E8ECF1",         // primary text
+        muted: "#97A3B4",      // secondary text
+        faint: "#6B7787",      // tertiary / captions
+        accent: "#64CEFB",     // the ShinyText blue — the single accent
+        "accent-dim": "#2B7A9B",
+        ok: "#5AD1A0",         // status: works
+        warn: "#E5B567",       // status: needs keys
+        stop: "#E8836F",       // status: not supported
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+      },
+      maxWidth: {
+        page: "72rem",
       },
     },
   },

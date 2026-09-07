@@ -1,69 +1,52 @@
+import { Section } from "@/components/sections/Section";
 import type { SiteCopy } from "@/content/types";
 
 export function HowItWorks({ copy }: { copy: SiteCopy }) {
   const { steps } = copy.how;
 
   return (
-    <section
-      id="how-it-works"
-      className="scroll-mt-8 border-t border-border py-16"
-    >
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <h2 className="text-2xl font-semibold tracking-tight">
-          {copy.how.title}
-        </h2>
-
-        {/* The pipeline, with control carrying the weight. */}
-        <div className="mt-6 overflow-x-auto">
-          <div className="flex w-max items-center gap-2 font-mono text-xs">
-            {steps.map((step, i) => (
-              <span key={step.name} className="flex items-center gap-2">
-                <span
-                  className={
-                    step.key
-                      ? "rounded border border-accent bg-accent px-3 py-2 font-semibold text-white"
-                      : "rounded border border-border bg-surface px-3 py-2 text-muted"
-                  }
-                >
-                  {step.name}
-                </span>
-                {i < steps.length - 1 ? (
-                  <span className="text-muted" aria-hidden>
-                    →
-                  </span>
-                ) : null}
+    <Section id="how-it-works" index="02" title={copy.how.title}>
+      {/* The pipeline as a rail: each step on a line, the control step lifted
+          out of it because that is where the money is actually stopped. */}
+      <ol className="relative">
+        {steps.map((step, i) => (
+          <li
+            key={step.name}
+            className={
+              step.key
+                ? "relative rounded-lg border border-accent/40 bg-accent/[0.06] px-5 py-6 md:px-7"
+                : "relative border-b border-line-soft px-0 py-6"
+            }
+          >
+            <div className="grid gap-3 md:grid-cols-[3rem_13rem_1fr] md:items-baseline md:gap-6">
+              <span
+                className={`eyebrow ${step.key ? "text-accent" : "text-faint"}`}
+              >
+                {String(i + 1).padStart(2, "0")}
               </span>
-            ))}
-          </div>
-        </div>
-
-        <dl className="mt-10 border-t border-border">
-          {steps.map((step) => (
-            <div
-              key={step.name}
-              className="grid gap-2 border-b border-border py-4 sm:grid-cols-[14rem_1fr] sm:gap-6"
-            >
-              <dt
-                className={
-                  step.key
-                    ? "font-mono text-sm font-semibold text-accent"
-                    : "font-mono text-sm font-semibold"
-                }
+              <h3
+                className={`font-mono text-sm font-semibold ${
+                  step.key ? "text-accent" : "text-fg"
+                }`}
               >
                 {step.name}
-              </dt>
-              <dd className="text-base leading-relaxed text-muted">
+              </h3>
+              <p className="max-w-2xl leading-relaxed text-muted">
                 {step.body}
-              </dd>
+              </p>
             </div>
-          ))}
-        </dl>
+          </li>
+        ))}
+      </ol>
 
-        <p className="mt-8 max-w-2xl text-base leading-relaxed">
+      <figure className="mt-10 border-l-2 border-accent pl-6">
+        <p className="max-w-2xl text-lg leading-relaxed text-fg md:text-xl">
           {copy.how.caption}
         </p>
-        <p className="mt-2 font-mono text-sm text-muted">{copy.how.note}</p>
-      </div>
-    </section>
+        <figcaption className="eyebrow mt-3 text-accent">
+          {copy.how.note}
+        </figcaption>
+      </figure>
+    </Section>
   );
 }

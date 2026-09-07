@@ -27,7 +27,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-bg">{children}</body>
+      <body className="bg-ink">{children}</body>
     </html>
   );
 }

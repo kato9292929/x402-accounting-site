@@ -1,34 +1,42 @@
+import { Section } from "@/components/sections/Section";
 import type { SiteCopy, StatusRow } from "@/content/types";
 
-const TAG_STYLE: Record<StatusRow["tone"], string> = {
-  works: "border-accent text-accent",
-  keys: "border-[#96610f] text-[#96610f]",
-  no: "border-[#96382b] text-[#96382b]",
+// Status is the most load-bearing section on the page: it is where the site
+// says what does not work. Each state gets its own colour so the three read
+// apart at a glance, not as one list of claims.
+const TONE: Record<StatusRow["tone"], { chip: string; stripe: string }> = {
+  works: { chip: "border-ok/40 bg-ok/10 text-ok", stripe: "bg-ok" },
+  keys: { chip: "border-warn/40 bg-warn/10 text-warn", stripe: "bg-warn" },
+  no: { chip: "border-stop/40 bg-stop/10 text-stop", stripe: "bg-stop" },
 };
 
 export function Status({ copy }: { copy: SiteCopy }) {
   return (
-    <section id="status" className="scroll-mt-8 border-t border-border py-16">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <h2 className="text-2xl font-semibold tracking-tight">
-          {copy.status.title}
-        </h2>
-        <div className="mt-8 flex flex-col gap-4">
-          {copy.status.rows.map((row) => (
+    <Section id="status" index="04" title={copy.status.title}>
+      <div className="flex flex-col gap-4">
+        {copy.status.rows.map((row) => {
+          const tone = TONE[row.tone];
+          return (
             <div
               key={row.tag}
-              className="grid gap-3 rounded border border-border bg-surface p-5 sm:grid-cols-[10rem_1fr] sm:gap-6"
+              className="relative overflow-hidden rounded-lg border border-line bg-surface"
             >
               <span
-                className={`justify-self-start rounded border px-2.5 py-1 font-mono text-xs font-semibold ${TAG_STYLE[row.tone]}`}
-              >
-                {row.tag}
-              </span>
-              <p className="text-sm leading-relaxed text-muted">{row.body}</p>
+                aria-hidden
+                className={`absolute inset-y-0 left-0 w-1 ${tone.stripe}`}
+              />
+              <div className="grid gap-4 py-6 pl-7 pr-6 md:grid-cols-[11rem_1fr] md:gap-8">
+                <span
+                  className={`eyebrow justify-self-start rounded-full border px-3 py-1.5 ${tone.chip}`}
+                >
+                  {row.tag}
+                </span>
+                <p className="leading-relaxed text-muted">{row.body}</p>
+              </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 }
