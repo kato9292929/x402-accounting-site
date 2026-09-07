@@ -22,15 +22,11 @@ export function Hero({
       <div className="relative z-10 flex min-h-screen flex-col">
         <HeroNav copy={copy} />
 
-        {/* Top rail: what it is, and what it isn't, before the headline. */}
+        {/* Top rail: just the licence badge. The explanation lives below the
+            headline, once, instead of twice on the first screen. */}
         <div className="mx-auto w-full max-w-page px-5 pt-4 sm:px-8">
-          <div className="flex flex-col gap-4 border-t border-white/10 pt-5 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
-            <p className="max-w-xl text-sm leading-relaxed text-white/70">
-              {copy.hero.topLeft}
-            </p>
-            <p className="eyebrow shrink-0 text-white/50 lg:text-right">
-              {copy.hero.topRight}
-            </p>
+          <div className="border-t border-white/10 pt-5">
+            <p className="eyebrow text-white/50">{copy.hero.topRight}</p>
           </div>
         </div>
 
@@ -53,7 +49,7 @@ export function Hero({
             />
           </h1>
 
-          <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
+          <p className="mt-7 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
             {copy.hero.sub}
           </p>
 

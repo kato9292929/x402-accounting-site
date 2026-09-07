@@ -25,7 +25,6 @@ export interface SiteCopy {
   navGithub: string;
 
   hero: {
-    topLeft: string;
     topRight: string;
     eyebrow: string;
     headingLine1: string;

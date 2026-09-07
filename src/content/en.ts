@@ -17,14 +17,12 @@ export const en: SiteCopy = {
   navGithub: "GitHub",
 
   hero: {
-    topLeft:
-      "x402 outward payments — normalized, held to a spend limit before signing, posted as double-entry journals, exported for accounting, reconciled monthly.",
     topRight: "Open-source proof of concept · MIT",
     eyebrow: "Runs on a sample ledger · Not a live integration",
     headingLine1: "Put agent per-call payments",
     headingShine: "on the books.",
     headingClass: "h1-en",
-    sub: "An accounting and spend-control layer for AI-agent payments. When your agents pay per API call in USDC, it enforces spending limits before each payment, records every payment as double-entry bookkeeping, exports it to your accounting software, and reconciles it monthly.",
+    sub: "Agents pay per API call in USDC. Each payment is capped before signing, then booked as a double-entry journal.",
     cta: "View on GitHub",
   },
 
