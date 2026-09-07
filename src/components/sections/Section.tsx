@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
 /**
- * One section: a monospace index in the left rail, the heading and body in the
- * main column. The index is the reading order of the page, not decoration.
+ * One section. The index sits above the heading rather than in a left rail —
+ * the rail left a wide empty column and pushed everything off-centre.
  */
 export function Section({
   id,
@@ -18,16 +18,14 @@ export function Section({
   return (
     <section
       id={id}
-      className="scroll-mt-16 border-t border-line-soft py-20 md:py-28"
+      className="scroll-mt-16 border-t border-line-soft py-16 md:py-24"
     >
-      <div className="mx-auto grid max-w-page gap-8 px-5 sm:px-8 lg:grid-cols-[7rem_1fr] lg:gap-16">
-        <div className="lg:pt-2">
+      <div className="mx-auto max-w-page px-5 sm:px-8">
+        <div className="flex items-baseline gap-4">
           <span className="eyebrow text-faint">{index}</span>
-        </div>
-        <div>
           <h2 className="h2-section font-medium text-fg">{title}</h2>
-          <div className="mt-8">{children}</div>
         </div>
+        <div className="mt-10">{children}</div>
       </div>
     </section>
   );

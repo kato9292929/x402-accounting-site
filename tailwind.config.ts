@@ -1,7 +1,13 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
+  // src/content もスキャンする。ロケール別の見出しクラス名（h1-en / h1-ja）は
+  // コピー側のデータに書いてあるので、ここを外すと該当の CSS が purge で消える。
+  content: [
+    "./src/app/**/*.{ts,tsx}",
+    "./src/components/**/*.{ts,tsx}",
+    "./src/content/**/*.{ts,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
